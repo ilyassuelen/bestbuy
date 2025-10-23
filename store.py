@@ -1,4 +1,5 @@
 class Store:
+    """Manages all products and handles customer orders."""
     def __init__(self, products):
         """Initialize the store with a list of Product objects."""
         self.products = products

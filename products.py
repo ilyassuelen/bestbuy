@@ -1,4 +1,5 @@
 class Product:
+    """Represents a product with name, price, and stock quantity."""
     def __init__(self, name, price, quantity):
         self.name = name
         self.price = price
@@ -48,7 +49,8 @@ class Product:
             raise Exception(f"Product '{self.name}' is not active and cannot be purchased.")
 
         if quantity > self.quantity:
-            raise Exception(f"Not enough quantity of '{self.name}' in stock. Available: {self.quantity}")
+            raise Exception(f"Not enough quantity of '{self.name}' in stock. "
+                            f"Available: {self.quantity}")
 
         # Calculate total price
         total_price = self.price * quantity

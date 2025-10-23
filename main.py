@@ -1,7 +1,9 @@
-import products, store
+import products
+import store
 
 
 def start(store_object):
+    """Starts the interactive store menu."""
     while True:
         print("""
    Store Menu
@@ -47,8 +49,8 @@ def start(store_object):
                 product_number = int(product_number)
 
                 # Check if product exists
-                products = store_object.get_all_products()
-                if product_number < 1 or product_number > len(products):
+                all_products = store_object.get_all_products()
+                if product_number < 1 or product_number > len(all_products):
                     print("Invalid product number.")
                     continue
 
@@ -59,7 +61,7 @@ def start(store_object):
 
                 amount = int(amount)
 
-                shopping_list.append((products[product_number - 1], amount))
+                shopping_list.append((all_products[product_number - 1], amount))
                 print("Product added to list!\n")
 
             # Finish order
